@@ -23,9 +23,9 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     Gcounter  Copyright (C) 2011  Nathan Hardy, nathanhardy@gmail.com
-    This program comes with ABSOLUTELY NO WARRANTY; for details type `show w'.
+    This program comes with ABSOLUTELY NO WARRANTY
     This is free software, and you are welcome to redistribute it
-    under certain conditions; type `show c' for details.
+    under certain conditions
 */
 
 
