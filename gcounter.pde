@@ -28,13 +28,6 @@
     under certain conditions
 */
 
-
-/* Required hardware:
-    - Arduino
-    - SparkFun's custom 7-Segment Serial Display
-    - ADXL193 Accelerometer
-*/
-
 #include <SoftwareSerial.h>
 #include <stdio.h>
 
