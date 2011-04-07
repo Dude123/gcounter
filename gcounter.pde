@@ -27,12 +27,13 @@
     This is free software, and you are welcome to redistribute it
     under certain conditions
 */
-//blah blah balh 
 
 #include <SoftwareSerial.h>
 #include <stdio.h>
 
 int i = 30;
+int baseI = 30;//baseI holds what I is set to when reset.
+
 // these constants describe the pins. They won't change:
 // Power for the Serial 7
 const int GND = 9;                    // input pin 9 -- ground
@@ -70,8 +71,8 @@ void setup()
   // Serial Display Init
   Serial.begin(9600);
   serialSeven.begin(9600);
-  // This should not really be here:
-  serialSeven.print("  30");
+  i=30;
+  output();
 }
 
 //void setBrightness(int dataByte) {
@@ -87,9 +88,40 @@ void loop()
 
   if (gCount > 5)
   {
-    char out[4]; ;
-    sprintf(out, "% 4d", i--);
-    serialSeven.print(out);
-    delay(50);
+      i--;
+      output();
+      delay(50);
   }
+}
+
+//added the setbase function This sets what i will be set to.
+void setBase(){
+    baseI = i;
+}
+
+//resets i call it when you push the reset button.
+void reset(){
+    i = baseI;
+    output;
+}
+
+//call this when the nob turns down. 
+void onTurnTheNobDown(){
+    i--;
+    setBase();
+    output();
+}
+
+//call this when you turn the nob down.
+void onTurnTheNobUp(){
+    i++;
+    setBase();
+    output();
+}
+
+//this does the output I put it into its own function because I wanted to be able to use it over and over.
+void output(){
+    char out[4];
+    sprintf(out, "% 4d", i);
+    serialSeven.print(out);
 }
