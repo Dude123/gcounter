@@ -79,19 +79,22 @@ void setup()
 //void setBrightness(int dataByte) {
 //  delay(2000);
 //  serialSeven.print("z");
-//  serialSeven.print(dataByte);
+//  serialSeven.print(dataByte, BYTE);
 //}
 
 void loop()
 {
+    if(i < 1){
+        return;
+    }
   int gRead = analogRead(xpin);
   int gCount = map(gRead, 0, 1023, -245, 250);
 
   if (gCount > 5)
   {
-      i--;
-      output();
-      delay(50);
+    i--;
+    output();
+    delay(50);
   }
 }
 
