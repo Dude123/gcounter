@@ -66,10 +66,15 @@ void setup()
   digitalWrite(powerpin, HIGH);
 
   // Serial Display Init
-  Serial.begin(9600);
   serialSeven.begin(9600);
-  i=30;
-  output();
+  /*
+     The following is just cosmetic, by removing the default "0000" at init
+     and replacing that with the output of "i" (e.g., if i = 30 then the
+     display shows: "  30")
+  */
+  delay(100);
+  serialSeven.print("  ");
+  serialSeven.print(i);
 }
 
 //void setBrightness(int dataByte) {
