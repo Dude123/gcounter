@@ -73,8 +73,7 @@ void setup()
      display shows: "  30")
   */
   delay(100);
-  serialSeven.print("  ");
-  serialSeven.print(i);
+  output();
 }
 
 //void setBrightness(int dataByte) {
