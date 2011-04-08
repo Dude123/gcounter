@@ -49,9 +49,6 @@ SoftwareSerial serialSeven = SoftwareSerial(rxPin, txPin);
 
 void setup()
 {
-  // initialize the serial communications:
-//  Serial.begin(9600);
- 
   // Provide ground and power by using the analog inputs as normal
   // digital pins.  This makes it possible to directly connect the
   // breakout board to the Arduino.  If you use the normal 5V and
