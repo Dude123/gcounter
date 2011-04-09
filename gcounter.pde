@@ -28,8 +28,8 @@
     under certain conditions
 */
 
-#include <SoftwareSerial.h>
-#include <stdio.h>
+include <SoftwareSerial.h>
+include <stdio.h>
 
 int i = 30;
 int baseI = 30;//baseI holds what I is set to when reset.
@@ -76,17 +76,18 @@ void setup()
   output();
 }
 
-//void setBrightness(int dataByte) {
-//  delay(2000);
-//  serialSeven.print("z");
-//  serialSeven.print(dataByte, BYTE);
-//}
+void setBrightness(int dataByte) {
+  delay(2000);
+  serialSeven.print("z");
+  serialSeven.print(dataByte, BYTE);
+}
 
 void loop()
 {
-    if(i < 1){
+    if(checkIfOutofBounds()){
         return;
     }
+
   int gRead = analogRead(xpin);
   int gCount = map(gRead, 0, 1023, -245, 250);
 
@@ -96,6 +97,14 @@ void loop()
     output();
     delay(50);
   }
+}
+
+void checkIfIOutofBounds(){
+    if(i < 1 || i > 9999){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 //added the setbase function This sets what i will be set to.
