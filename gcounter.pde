@@ -100,11 +100,11 @@ void loop()
 }
 
 
-bool checkIfOutOfBounds(){
+int checkIfOutOfBounds(){
     if(i < 1 || i > 9999){
-        return true;
+        return 1;
     }else{
-        return false;
+        return 0;
     }
 }
 
