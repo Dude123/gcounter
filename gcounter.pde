@@ -99,7 +99,8 @@ void loop()
   }
 }
 
-void checkIfIOutofBounds(){
+
+bool checkIfOutOfBounds(){
     if(i < 1 || i > 9999){
         return true;
     }else{
