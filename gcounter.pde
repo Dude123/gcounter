@@ -28,8 +28,8 @@
     under certain conditions
 */
 
-include <SoftwareSerial.h>
-include <stdio.h>
+#include <SoftwareSerial.h>
+#include <stdio.h>
 
 int i = 30;
 int baseI = 30;//baseI holds what I is set to when reset.
