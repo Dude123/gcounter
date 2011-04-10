@@ -84,7 +84,7 @@ void setBrightness(int dataByte) {
 
 void loop()
 {
-    if(checkIfOutofBounds()){
+    if(checkIfOutOfBounds()){
         return;
     }
 
